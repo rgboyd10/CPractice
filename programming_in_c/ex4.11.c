@@ -4,10 +4,10 @@
 
 int main(void)
 {
-	int x, sum, current_digit;
+	int x, sum = 0, current_digit;
 	printf("Enter a number: ");
 	scanf("%i",&x);
-	while(x != 0)
+	while(x > 0)
 	{
 		current_digit = x % 10;
 		sum += current_digit;
