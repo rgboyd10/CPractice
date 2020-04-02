@@ -11,7 +11,7 @@ int main(void)
 	
 	printf("Enter your responses\n");
 	
-	for(i = 1; i <= 20; i++)
+	while(response != 999)
 	{
 		scanf("%i", &response);
 		if(response < 1 || response > 10)
