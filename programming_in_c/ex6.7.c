@@ -11,7 +11,7 @@ int main(void)
 
 	for(int x = 2; x <= 150; x++)
 		 
-	
+/*..need to finish later*/	
 			
 		
 }
