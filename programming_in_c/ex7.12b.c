@@ -2,22 +2,22 @@
 #include <math.h>
 #include <string.h>
 
-void transposeMatrix(int a[4][5], int b[5][4], int row_length, int column_length, int brow_length, int bcolumn_length)
+void transposeMatrix(int row_length, int column_length, int brow_length, int bcolumn_length, int a[row_length][column_length], int b[brow_length][bcolumn_length])
 {
 		
 	for(int x = 0; x < row_length + 1; x++)
 	{	
-		for(int y = 0; y < column_length - 1; y++)
+		for(int y = 0; y < column_length; y++)
 		{
 			b[x][y] = a[y][x];
 		}
 	}
 
 
-	printf("The transposed 4x5 matrix is now a 5x4 matrix below:\n");	
+	printf("The transposed %ix%i matrix is now a %ix%i matrix below:\n",row_length, column_length, brow_length, bcolumn_length);	
 	for(int x = 0; x < brow_length; x++)
 	{	
-		for(int y = 0; y < column_length - 1; y++)
+		for(int y = 0; y < column_length; y++)
 		{
 			printf("%i",b[x][y]);
 			if(y == column_length-2)
@@ -54,7 +54,7 @@ int main(void)
 	int matrix[row_length][column_length];
 	int b[brow_length][bcolumn_length];
 
-	printf("Please enter numbers to be entered into a 4x5 matrix:\n");
+	printf("Please enter numbers to be entered into a %ix%i matrix:\n",row_length, column_length);
 	for(int x = 0; x < row_length; x++)
 	{
 		for(int y = 0; y < column_length; y++)
@@ -73,7 +73,7 @@ int main(void)
 		}
 	}
 
-	transposeMatrix(matrix,b,row_length, column_length, brow_length, bcolumn_length);
+	transposeMatrix(row_length, column_length, brow_length, bcolumn_length, matrix, b);
 
 	return 0;
 }
