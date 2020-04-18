@@ -5,9 +5,9 @@
 void transposeMatrix(int row_length, int column_length, int brow_length, int bcolumn_length, int a[row_length][column_length], int b[brow_length][bcolumn_length])
 {
 		
-	for(int x = 0; x < row_length + 1; x++)
+	for(int x = 0; x < column_length + 1; x++)
 	{	
-		for(int y = 0; y < column_length; y++)
+		for(int y = 0; y < row_length; y++)
 		{
 			b[x][y] = a[y][x];
 		}
@@ -27,6 +27,14 @@ void transposeMatrix(int row_length, int column_length, int brow_length, int bco
 	}
 }
 /*
+123
+321
+123
+
+13
+122
+231
+
 12345
 12345
 12345
