@@ -5,9 +5,9 @@
 void transposeMatrix(int row_length, int column_length, int brow_length, int bcolumn_length, int a[row_length][column_length], int b[brow_length][bcolumn_length])
 {
 		
-	for(int x = 0; x < row_length + 1; x++)
+	for(int x = 0; x < row_length; x++)
 	{	
-		for(int y = 0; y < column_length - 1; y++)
+		for(int y = 0; y < column_length; y++)
 		{
 			b[x][y] = a[y][x];
 		}
@@ -17,10 +17,10 @@ void transposeMatrix(int row_length, int column_length, int brow_length, int bco
 	printf("The transposed %ix%i matrix is now a %ix%i matrix below:\n",row_length, column_length, brow_length, bcolumn_length);	
 	for(int x = 0; x < brow_length; x++)
 	{	
-		for(int y = 0; y < bcolumn_length-1; y++)
+		for(int y = 0; y < column_length; y++)
 		{
 			printf("%i",b[x][y]);
-			if(y == column_length-2)
+			if(y == bcolumn_length-1)
 				printf("\n");
 		}
 	
