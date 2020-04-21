@@ -3,7 +3,7 @@
 
 int p, result, x;
 
-int prime(int p)
+int prime()
 {
 	x= p - 1;
 	result = 0;
@@ -22,6 +22,6 @@ int main(void)
 {
 	printf("Enter a number to find out if it is prime: ");
 	scanf("%i", &p);
-	result = prime(p);
+	result = prime();
 	printf("Result: %i.\n1 means prime and 0 means not prime.\n",result);
 }

@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <math.h>
 
-int arraySum(int arr[], int sz)
+int arr[3] = {5, 6, 7};
+int sz = 3;
+int sum = 0;
+
+int arraySum()
 {
-	int sum = 0;
 	for(int x = 0; x < sz; x++)
 	{
 		sum += arr[x];
@@ -13,8 +16,6 @@ int arraySum(int arr[], int sz)
 
 int main(void)
 {
-	int sz = 3;
-	int arr[3] = {5, 6, 7};
-	printf("The sum of the array is %i.\n",arraySum(arr,sz));
+	printf("The sum of the array is %i.\n",arraySum());
 	return 0;
 }
