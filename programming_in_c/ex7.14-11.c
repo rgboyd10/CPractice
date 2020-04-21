@@ -1,26 +1,20 @@
 #include <stdio.h>
 #include <math.h>
 
-int prime(int p)
+int arraySum(int arr[], int sz)
 {
-	int x = p-1;
-	int result = 0;
-	while(x > 1)
-	{	
-		if(p % x != 0)
-			x--;
-		else
-			return result = 0;
+	int sum = 0;
+	for(int x = 0; x < sz; x++)
+	{
+		sum += arr[x];
 	}
-
-	return result = 1;	
+	return sum;
 }
 
 int main(void)
 {
-	int p, result;
-	printf("Enter a number to find out if it is prime: ");
-	scanf("%i", &p);
-	result = prime(p);
-	printf("%i\n",result);
+	int sz = 3;
+	int arr[3] = {5, 6, 7};
+	printf("The sum of the array is %i.\n",arraySum(arr,sz));
+	return 0;
 }
