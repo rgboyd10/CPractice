@@ -46,7 +46,7 @@ int main(void)
 		for(i = 0; i < 16; i++)
 		printf("%i", array[i]);
 	
-		sort(array, 16, x);
+		sort();
 		
 		printf("\n\nThe array after the sort:\n");
 	
