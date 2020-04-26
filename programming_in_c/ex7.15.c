@@ -1,49 +1,62 @@
+// a program to convert a positive integer to another base
+
 #include <stdio.h>
+
+int convertedNumber[64];
+long int numberToConvert;
+int base = 1;
+int digit = 0;
+
+void getNumberAndBase(void)
+{
+	printf("Number to be converted? ");
+	scanf("%li", &numberToConvert);
+	
+	while(base <= 2 || base >= 16)
+	{
+		printf("Enter a base between 2 and 16.\n");
+		scanf("%i", &base);
+		if(base >= 2 && base <= 16)
+		{
+			printf("Good base.\n");
+			break;
+		}
+
+	}	
+}
+
+void convertNumber(void)
+{
+	do {
+		convertedNumber[digit] = numberToConvert % base;
+		digit++;
+		numberToConvert /= base;
+	}
+	while(numberToConvert != 0);
+}	
+void displayConvertedNumber(void)
+{
+		const char baseDigits[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+		int nextDigit;
+	
+		printf("Converted number = ");
+		
+		for(--digit; digit >= 0; --digit)
+		{
+			nextDigit = convertedNumber[digit];
+			printf("%c", baseDigits[nextDigit]);
+		}
+	
+		printf("\n");
+}
 
 int main(void)
 {
-	void scalarMultiply(int nRows, int nCols, int matrix[nRows][nCols], int scalar);
-	void displayMatrix(int nRows, int nCols, int matrix[nRows][nCols]);
-	int sampleMatrix[3][5] = 
-			{
-				{7, 16, 55, 13, 12},
-				{12, 10, 52, 0, 7},
-				{-2, 1, 2, 4, 9}
-			};
+	void getNumberAndBase(void), convertNumber(void), displayConvertedNumber(void);
 	
-	printf("Original matrix:\n");
-	displayMatrix(3, 5, sampleMatrix);
+	getNumberAndBase();
+	convertNumber();
+	displayConvertedNumber();
 	
-	scalarMultiply(3, 5, sampleMatrix, 2);
-	printf("\nMultiplied by @:\n");
-	displayMatrix(3, 5, sampleMatrix);
-	
-	scalarMultiply(3, 5, sampleMatrix, -1);
-	printf("\nThen multiplied by -1:\n");
-	displayMatrix(3, 5, sampleMatrix);
-
 	return 0;
-}
-
-//Function to multiply a matrix by a scalar
-
-void scalarMultiply(int nRows, int nCols, int matrix[nRows][nCols], int scalar)
-{
-	int row, column;
-	for(row = 0; row < nRows; row++)
-		for(column = 0; column < nCols; column++)
-			matrix[row][column] *= scalar;
-}
-
-void displayMatrix (int nRows, int nCols, int matrix[nRows][nCols])
-{
-	int row, column;
-	
-	for(row = 0; row < nRows; row++)
-	{
-		for(column = 0; column < nCols; column++)
-		printf("%5i", matrix[row][column]);
-
-		printf("\n");
-	}
 }
