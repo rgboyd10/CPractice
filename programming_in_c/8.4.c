@@ -9,12 +9,38 @@ struct date
 	int year;
 };
 
-//Function to calculate tomorrow's date
+
+//Function to determine if it's a leap year
+bool isLeapYear(struct date d)
+{
+	bool leapYearFlag;
 	
+	if((d.year % 4 == 0 && d.year % 100 != 0) || d.year % 400 == 0)
+		leapYearFlag = true; //It's a leap year
+	else
+		leapYearFlag = false; //Not a leap year
+	
+	return leapYearFlag;
+}
+
+//Function to find the number of days in a month
+int numberOfDays(struct date d)
+{
+	int days;
+	const int daysPerMonth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	
+	if(isLeapYear(d) && d.month == 2)
+		days = 29;	
+	else
+		days = daysPerMonth[d.month - 1];
+	
+	return days;
+}
+
+//Function that updates the date
 struct date dateUpdate(struct date today)
 {
 	struct date tomorrow;
-	int numberOfDays(struct date d);
 	
 	if(today.day != numberOfDays(today)){
 		tomorrow.day = today.day + 1;
@@ -34,38 +60,8 @@ struct date dateUpdate(struct date today)
 	return tomorrow;
 }
 
-//Function to find the number of days in a month
-int numberofDays(struct date d)
-{
-	int days;
-	bool isLeapYear(struct date d);
-	const int daysPerMonth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-	
-	if(isLeapYear(d) && d.month == 2)
-		days = 29;	
-	else
-		days = daysPerMonth[d.month - 1];
-	
-	return days;
-}
-	
-//Function to determine if it's a leap year
-	
-bool isLeapYear(struct date d)
-{
-	bool leapYearFlag;
-	
-	if((d.year % 4 == 0 && d.year % 100 != 0) || d.year % 400 == 0)
-		leapYearFlag = true; //It's a leap year
-	else
-		leapYearFlag = false; //Not a leap year
-	
-	return leapYearFlag;
-}
-
 int main(void)
 {
-	struct date dateUpdate(struct date today);
 	struct date thisDay,nextDay;
 	
 	printf("Enter today's date (mm dd yyyy): ");
