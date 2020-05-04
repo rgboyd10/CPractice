@@ -22,5 +22,13 @@ int main(void)
 		{30, {'N', 'o', 'v'}}, {31, {'D', 'e', 'c'}}
 	};
 
+	printf("Month	Number of Days\n");
+	printf("-----	--------------\n");
 	
+	for(i = 0; i < 12; i++)
+	{
+		printf(" %c%c%c	%i\n",months[i].name[0], months[i].name[1], months[i].name[2], months[i].numberOfDays);
+	}
+	
+	return 0;
 }
