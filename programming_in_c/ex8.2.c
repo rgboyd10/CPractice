@@ -12,7 +12,7 @@ struct date
 
 void calcDays(struct date x, struct date y)
 {
-	int f, g, xresult, yresult;
+	int f, g;
 	
 	if(x.month <= 2)
 		f = x.year - 1;
@@ -31,8 +31,8 @@ void calcDays(struct date x, struct date y)
 int main(void)
 {
 	struct date first, second;
-	printf("Enter 2 dates that you would like to know the number of days between. Example format = mm:dd:yy mm:dd:yy.\n");
+	printf("Enter 2 dates that you would like to know the number of days between. Example format = earliest date latest date = mm:dd:yy mm:dd:yy.\n");
 	scanf("%i:%i:%i %i:%i:%i", &first.month, &first.day, &first.year, &second.month, &second.day, &second.year); 
 	calcDays(first, second);
-	printf("\nThe time gap is %i.\n", yresult - xresult);
+	printf("\nThe time gap is %i days.\n", yresult - xresult);
 }
