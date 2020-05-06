@@ -51,4 +51,5 @@ int main(void)
 	printf("Enter 2 dates that you would like to know the number of days between. Example format = mm:dd:yy mm:dd:yy.\n");
 	scanf("%i:%i:%i %i:%i:%i", &first.month, &first.day, &first.year, &second.month, &second.day, &second.year); 
 	printf("\nThe time gap is %i days.\n", calcDiff(first,second));
+	return 0;
 }
