@@ -15,6 +15,13 @@ struct time elapsed_time(struct time x, struct time y)
 	bob.minutes = x.minutes - y.minutes;
 	bob.seconds = x.seconds - y.seconds;
 
+	if(bob.hours < 0)
+		bob.hours = bob.hours * -1;
+	if(bob.minutes < 0)
+		bob.minutes = bob.minutes * -1;
+	if(bob.seconds < 0)
+		bob.seconds = bob.seconds * -1;
+
 	return bob;
 }
 
