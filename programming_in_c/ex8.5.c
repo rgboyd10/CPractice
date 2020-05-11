@@ -62,23 +62,6 @@ int main(void)
 	struct dateAndTime currentd&t;
 	int dortchoice; 
 	printf("Please enter the current date and time in the format mm:dd:yy hh:mm:ss: \n");
-	scanf("%i:%i:%i %i:%i:%i");
-	scanf("%i",&dortchoice);
-	if(dortchoice == 1)
-	{
-		cur
-	}
-	else if(dortchoice == 2)
-	{
-		
-	}
-	else
-	{
-		
-	}
-	
-	
-	
 	
 	return 0;
 }
