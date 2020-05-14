@@ -33,18 +33,47 @@ void timeUpdate(struct dateAndTime t)
 	
 	switch(c)
 		case: d
+			t.day += 1;	
 			break;
 		case: m
+			t.month += 1;
 			break;
 		case: y
-			break;	` 
-	
+			t.hour += 1;
+			if(t.hour > 12)
+			{
+				t.hour = 1;
+				if(amorpm == "AM")
+					amorpm = "PM";
+				else
+					amorpm = "AM";
+			}
+			break;	
 		default:
+			printf("Incorrect input. Please try again.\n");
+			timeUpdate();	
 		break;
 }
 
 void dateUpdate(struct dateAndTime d)
 {
+	int amount;
+	char c;
+	printf("Would you like to add seconds, minutes or hours?\n Enter s for seconds.\n Enter m for minutes.\n Enter h for hours.\n");
+	scanf("%c", &c);
+	
+	switch(c)
+		case: s
+			
+			break;
+		case: m
+			break;
+		case: h
+			break;	
+		default:
+			printf("Incorrect input. Please try again.\n");
+			timeUpdate();	
+		break;
 
 }
 
@@ -62,22 +91,9 @@ struct dateAndTime clockKeeper(struct dateAndTime x)
 	else if(dortchoice == 0)
 		timeUpdate();
 	else
+		printf("Incorrect input, please try again.");
+		clockKeeper(x);
 	
-	printf("Current time is: %i:%i:%i %i:%i:%i\n Would you like to change the date or time?\nEnter 1 for date or 2 for time.\n");	
-	scanf("%i",&dortchoice);
-	if(dortchoice !=)
-	{
-		dateUpdate();
-	}
-	else if()
-	{
-		timeUpdate();
-	}
-	else
-	{
-		printf("Incorrect"); 	
-	}	
-
 	return result;	
 }
 
