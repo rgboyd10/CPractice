@@ -24,12 +24,26 @@ struct dateAndTime
 	struct time stime;
 };
 
-void timeUpdate()
+void timeUpdate(struct dateAndTime t)
 {
+	int amount;
+	char c;
+	printf("Would you like to add days, months or years?\n Enter d for days.\nEnter m for months.\nEnter y for years.\n");
+	scanf("%c", &c);
 	
+	switch(c)
+		case: d
+			break;
+		case: m
+			break;
+		case: y
+			break;	` 
+	
+		default:
+		break;
 }
 
-void dateUpdate()
+void dateUpdate(struct dateAndTime d)
 {
 
 }
@@ -51,7 +65,7 @@ struct dateAndTime clockKeeper(struct dateAndTime x)
 	
 	printf("Current time is: %i:%i:%i %i:%i:%i\n Would you like to change the date or time?\nEnter 1 for date or 2 for time.\n");	
 	scanf("%i",&dortchoice);
-	if(x.sdate.hours >= 12 && x.sdate.minutes >= 0 && x.sdate.seconds >= 0)
+	if(dortchoice !=)
 	{
 		dateUpdate();
 	}
@@ -61,7 +75,7 @@ struct dateAndTime clockKeeper(struct dateAndTime x)
 	}
 	else
 	{
-		
+		printf("Incorrect"); 	
 	}	
 
 	return result;	
