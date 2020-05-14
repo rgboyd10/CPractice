@@ -24,7 +24,7 @@ struct dateAndTime
 	struct time stime;
 };
 
-void timeUpdate(struct dateAndTime t)
+void dateUpdate(struct dateAndTime t)
 {
 	int amount;
 	char c;
@@ -32,30 +32,30 @@ void timeUpdate(struct dateAndTime t)
 	scanf("%c", &c);
 	
 	switch(c)
-		case: d
-			t.day += 1;	
+	{
+		case 'd':
+			printf("How many days?\n");
+			scanf("%i", &amount);
+			t.sdate.day += amount;
 			break;
-		case: m
-			t.month += 1;
+		case 'm':
+			printf("How many months?\n");
+			scanf("%i", &amount);
+			t.sdate.month += amount;
 			break;
-		case: y
-			t.hour += 1;
-			if(t.hour > 12)
-			{
-				t.hour = 1;
-				if(amorpm == "AM")
-					amorpm = "PM";
-				else
-					amorpm = "AM";
-			}
-			break;	
+		case 'y':
+			printf("How many years?\n");
+			scanf("%i", &amount);
+			t.sdate.year += amount;
+			break;
 		default:
 			printf("Incorrect input. Please try again.\n");
 			timeUpdate();	
 		break;
+	}
 }
 
-void dateUpdate(struct dateAndTime d)
+void timeUpdate(struct dateAndTime d)
 {
 	int amount;
 	char c;
@@ -63,18 +63,36 @@ void dateUpdate(struct dateAndTime d)
 	scanf("%c", &c);
 	
 	switch(c)
-		case: s
-			
+	{
+		case 's':
+			printf("How many seconds?\n");
+			scanf("%i", &amount);
+			d.stime.second += amount;
 			break;
-		case: m
+		case 'm':
+			printf("How many minutes?\n");
+			scanf("%i", &amount);
+			d.stime.minute += amount;
 			break;
-		case: h
+		case 'h':
+			printf("How many hours?\n");
+			scanf("%i", &amount);
+			d.stime.hour += amount;	
+			if(d.stime.hour > 12 && amorpm == "AM")
+			{
+				d.stime.hour = 1;
+				amorpm = "PM";
+			}
+			else if(d.stime.hour > 12 && amorpm == "PM")
+			{
+				amorpm = "AM";
+			}
 			break;	
 		default:
 			printf("Incorrect input. Please try again.\n");
 			timeUpdate();	
 		break;
-
+	}
 }
 
 struct dateAndTime clockKeeper(struct dateAndTime x)
