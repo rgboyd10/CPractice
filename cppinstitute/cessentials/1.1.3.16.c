@@ -11,16 +11,18 @@ int main()
  	int daysInJune = 30;
 	int daysInJuly = 31;
 	int daysInAugust = 31;
-	int daysInSeptember = 3;
-	int daysInOctober 		= 3;
-	int daysInNovember 		= 3;
-	int daysInDecember 		= 3;
-	int daysInFirstHalf = daysIn January + daysIn December + daysIn March 
-		+ daysInApril + daysInMay + daysInJuly;
-	int daysInSecondHalf = daysInJune + daysInAugust + daysInSeptember 
-		+ daysIn October + daysIn November + daysIn February;
-	printf("Days in the first half of the current year: %d\n", daysInFirstHalf);
-	printf("Days in the second half of the current year: %d\n", daysInSecondHalf);
-	printf("Days in the current year: %d\n", daysInFirstHalf + daysInSecondHalf);
+	int daysInSeptember = 30;
+	int daysInOctober = 31;
+	int daysInNovember = 30;
+	int daysInDecember = 31;
+	int daysInFirstQuarter = daysInJanuary + daysInFebruary + daysInMarch;
+	int daysInSecondQuarter = daysInApril + daysInMay + daysInJune;
+	int daysInThirdQuarter = daysInJuly + daysInAugust + daysInSeptember;
+	int daysInFourthQuarter = daysInOctober + daysInNovember + daysInDecember;
+	
+	printf("Days in Q1 of the current year: %i\n",daysInFirstQuarter);
+	printf("Days in Q2 of the current year: %i\n",daysInSecondQuarter);
+	printf("Days in Q3 of the current year: %i\n",daysInThirdQuarter);
+	printf("Days in Q4 of the current year: %i\n",daysInFourthQuarter);
 	return 0;
-}i
+}
