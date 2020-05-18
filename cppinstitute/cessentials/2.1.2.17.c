@@ -22,7 +22,12 @@ int main(void)
 	xValue +=3;
 	yValue -= xValue;
 	result = xValue * yValue;
-	
+	result += result;
+	result--;
+	yValue = result % result;
+	result += result + xValue;
+	bigResult =  result * result * result;
+	result += xValue * yValue;
 
 	printf("result: %d\n", result);
 	printf("big result: %d\n", bigResult);
