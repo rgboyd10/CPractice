@@ -27,6 +27,6 @@ numbers greater than or equal to 5 and less than 6 - Very good.
 	else if(in >= 5 && in < 6)
 		printf("Very good.\n");
 	else
-		printf("");
+		printf(" \n");
 		return 0;
 }
