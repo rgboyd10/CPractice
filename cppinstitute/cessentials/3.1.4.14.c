@@ -19,6 +19,17 @@ int main()
 	int countera = 0, counterb = 1, num = 1;
 	char ch[] = "*#";
 	scanf("%i",&num);	
+	if(num > 20)	
+	{
+		num = 20;
+	}		
+	
+	if(num <= 1)
+	{
+		printf("*#\n");
+		return 0;
+	}	
+
 	do
 	{
 		do
