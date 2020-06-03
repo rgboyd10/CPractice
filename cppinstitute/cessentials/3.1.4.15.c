@@ -16,14 +16,13 @@ int main(void)
                 return 0;
         }
 
-        do
-        {
-                do
-                {
-                        printf("*#");
-                        countera++;
-                }
-                while(countera < counterb);
+	for(counterb = 1; counterb <= num; counterb++)
+	{
+	
+                for(countera = 0; countera < counterb; countera++)
+		{
+			printf("*#");
+		}
 
                 printf("\n");
                 countera = 0;
