@@ -2,10 +2,10 @@
 
 /*
  * for whatever input
- %!
- %!%!
- %!%!%!
-
+example num = 3
+*#
+*#*#
+*#*#*#
 	print 1
 	skip a line
 	print 2
@@ -16,26 +16,20 @@
 
 int main()
 {
-	int multiplier, countera = 0, counterb = 0, num = 1;
+	int countera = 0, counterb = 1, num = 1;
 	char ch[] = "*#";
-	scanf("%i",&num);
-	counterb = num;
+	scanf("%i",&num);	
 	do
 	{
-		if(countera >= counterb)
-			break;
-
 		do
 		{
 			printf("*#");
-			
 			countera++;
-			if(countera > countera - 1)
-				printf("\n");
-
 		}
-		while(countera <= counterb);
+		while(countera < counterb);
 		
+		printf("\n");
+		countera = 0;	
 		counterb++; 
 	}
 	while(counterb <= num);
