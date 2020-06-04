@@ -3,7 +3,6 @@
 int main(void)
 {
         int countera = 0, counterb = 1, num = 1;
-        char ch[] = "*#";
         scanf("%i",&num);
         if(num > 20)
         {
@@ -12,20 +11,25 @@ int main(void)
 
         if(num <= 1)
         {
-                printf("*#\n");
+                printf("*\n");
                 return 0;
         }
 
-	for(counterb = 1; counterb <= num; counterb++)
-	{
-	
+	for(counterb = 1; counterb <= num * 2; counterb++)
+	{	
                 for(countera = 0; countera < counterb; countera++)
 		{
-			printf("*#");
+			
+			for(int x = 0; x < y; x++)
+				for(int z = 0; z < w; w++)
+			
+			if(countera == 0 || countera == counterb - 1)
+			{
+				printf("*");
+			}
 		}
 
                 printf("\n");
-                countera = 0;
                 counterb++;
         }
         while(counterb <= num);	
