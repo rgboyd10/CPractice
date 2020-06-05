@@ -1,5 +1,23 @@
 #include <stdio.h>
 
+/*
+ desired output
+ 3
+ 
+**
+* *
+*  *
+*   *
+*  *
+* *
+**
+
+
+ * */
+
+
+
+
 int main(void)
 {
         int countera = 0, counterb = 1, num = 1;
@@ -21,8 +39,12 @@ int main(void)
 		{
 			
 			for(int x = 0; x < y; x++)
+			{
 				for(int z = 0; z < w; w++)
-			
+				{
+				
+				}
+			}
 			if(countera == 0 || countera == counterb - 1)
 			{
 				printf("*");
