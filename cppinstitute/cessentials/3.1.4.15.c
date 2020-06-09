@@ -20,7 +20,7 @@
 
 int main(void)
 {
-        int countera = 0, counterb = 1, num = 1;
+        int countera = 1, counterb = 1, num = 1;
         scanf("%i",&num);
         if(num > 20)
         {
@@ -33,28 +33,25 @@ int main(void)
                 return 0;
         }
 
-	for(counterb = 1; counterb <= num * 2; counterb++)
+	for(counterb = 0; counterb <= num * 2; counterb++)
 	{	
-                for(countera = 0; countera < counterb; countera++)
+		printf("*");
+       		if(countera = counterb + 1)
 		{
-			
-			for(int x = 0; x < y; x++)
-			{
-				for(int z = 0; z < w; w++)
-				{
-				
-				}
-			}
-			if(countera == 0 || countera == counterb - 1)
-			{
-				printf("*");
-			}
+			printf("*");
 		}
 
-                printf("\n");
-                counterb++;
+		countera++; 	        
+		printf("\n");
         }
-        while(counterb <= num);	
+
+	for(countera = counterb; countera > 0; countera--)
+	{
+		if(countera = counterb - 1)
+		{
+			printf("*");
+		}
+	}
 	
 	return 0;
 }
