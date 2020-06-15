@@ -3,7 +3,7 @@
 int getInput()
 {
 	int in;
-	scanf("%i", in);
+	scanf("%i", &in);
 	if(in > 256)
 		getInput();		
 	
@@ -12,15 +12,15 @@ int getInput()
 
 int main()
 {
-	int num, hnibble, lnibble;
-	printf("Please enter a number smaller than 256.");
+	int num, hnibble, lnibble, numbytes;
+	printf("Please enter a number smaller than 256.\n");
 	num = getInput();
-		
-	hnibble = ;
-	lnibble = ;
+	numbytes = num % 4;	
+	hnibble = (numbytes & 0x0F) << 4;
+	lnibble = (numbytes & 0xF0) >> 4;
 	
-	printf("H nibble: %i", hnibble);
-	printf("L nibble: %i", lnibble);
+	printf("H nibble: %i\n", hnibble);
+	printf("L nibble: %i\n", lnibble);
 	
 	return 0;
 }
