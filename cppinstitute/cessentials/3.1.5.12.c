@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int getInput()
+signed int getInput()
 {
 	int in;
 	scanf("%i", &in);
@@ -9,16 +9,14 @@ int getInput()
 
 int main()
 {
-	int num;
-	unsigned char ch, hnibble, lnibble;
+	int num, hnibble, lnibble;
 	printf("Please enter a number smaller than 256.\n");
 	num = getInput();
-	ch = (char)num;
-	hnibble = (ch & 0x0F) << 4;
-	lnibble = (ch & 0xF0) >> 4;
+	hnibble = (num >> 4) & 0x0F;
+	lnibble = (num) & 0x0F;
 	
-	printf("H nibble: %u\n", hnibble);
-	printf("L nibble: %u\n", lnibble);
+	printf("H nibble: %i\n", hnibble);
+	printf("L nibble: %i\n", lnibble);
 	
 	return 0;
 }
