@@ -22,14 +22,18 @@ int main()
 	for(int x = 0; x < 10; x++)
 	{
 		if(x % 3 == 0)
-		printf("%i\n",fibonacci[x]);
+		{
+			printf("%i\n",fibonacci[x]);
+		}
 	}
 
 	//print only the even numbers of the array	
 	for(int x = 0; x < 10; x++)
 	{
 		if(x % 2 == 0)
-		printf("%i\n",fibonacci[x]);
+		{
+			printf("%i\n",fibonacci[x]);
+		}
 	}
 	
 	return 0;
