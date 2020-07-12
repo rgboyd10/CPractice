@@ -2,21 +2,25 @@
 int main()
 {
 	float numbers[10] = {5.6, 4.3, 6.2, 6.4, 7.3, 2.3, 8.3, 9.2, 0.1, 1.9};
-	float a, b;
-	int x;
+	float a;
+	int x, y, z;
 
 	for(x = 0; x < 10; x++)
 	{
-		if(numbers[x] < numbers[x+1])
+		for(z = 0; z < 10; z++)
 		{
-			a = numbers[x];
-			numbers[x] = numbers[x+1];
-			numbers[x+1] = a;
-		}
+			if(numbers[z] < numbers[z+1])
+			{
+				a = numbers[z];
+				numbers[z] = numbers[z+1];
+				numbers[z+1] = a;
+			}
+			
+		} 
 		
-		for(x = 0; x < 10; x++)
+		for(y = 0; y < 10; y++)
 		{
-			printf("%.2f ",numbers[x]);
+			printf("%.2f ",numbers[y]);
 		}
 	
 		printf("\n");
