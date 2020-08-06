@@ -1,4 +1,4 @@
-#include <stdio.h.>
+#include <stdio.h>
 
 int main()
 {
@@ -17,5 +17,24 @@ int main()
 	float *biggerStart = biggerNumbers;
 	float *middle1 = biggerNumbers + 5;
 	float *middle2 = middle1 + 5;
-		
+	
+	for(middle1; middle1 >= biggerStart; middle1++)
+	{
+		printf("%.1f\n", *middle1);
+		printf("%.1f\n", *middle2);	
+	}	
+
+	return 0;	
 }
+/*
+expected output
+4.5
+6.8
+2.3
+9.8
+5.2
+8.2
+4.4
+7.5
+3.3
+9.2*/
